@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <h2 class="mt-3" style="text-transform:capitalize;">Welcome To My Website, {% if user.is_authenticated %}{{ user.username }}{% else %}visitor{% endif %}</h2>
+    {% if user.is_authenticated %} 
+    <h6 style="display: none;">To see Blog page and read more sign up or login</h6>
+     {% else %}
+     <h6>To see Blog page and read more, Sign Up or Login</h6>
+     {% endif %}
+
+    <div class="container">
+        <div class="row mt-5">
+
+        <div class="col-md-4">
+            
+              <div class="card" style="width: 18rem;">
+                  <img src="{% static 'images/desktop-1.jpg' %}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                  <h5 class="card-title">My First Project</h5>
+                  <p class="card-text">A web development project</p>
+                  <a href="{% url 'blog' %}" class="btn btn-primary">Read more</a>
+                  </div>
+              </div>
+            </div>
+        
+
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'images/desktop-2.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">My Second Project</h5>
+                <p class="card-text">Another web development project</p>
+                <a href="{% url 'blog' %}" class="btn btn-primary">Read more</a>
+                </div>
+            </div>
+      </div>
+
+      <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'images/laptop.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">My Third Project</h5>
+                <p class="card-text">A final web development project</p>
+                <a href="{% url 'blog' %}" class="btn btn-primary">Read more</a>
+                </div>
+            </div>
+          </div>
+      </div>
+      </div>
+{% endblock %}
